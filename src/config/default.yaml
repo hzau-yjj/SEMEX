@@ -1,0 +1,63 @@
+# --- Defaults ---
+
+# --- pymarl options ---
+runner: "episode"
+mac: "basic_mac"
+env: "sc2"
+env_args: {}
+batch_size_run: 1
+test_nepisode: 20
+test_interval: 2000
+test_greedy: True
+log_interval: 2000
+runner_log_interval: 2000
+learner_log_interval: 2000
+t_max: 10000
+use_cuda: True
+buffer_cpu_only: True
+seed: 337411707
+
+# --- Logging options ---
+use_tensorboard: False
+save_model: False
+save_model_interval: 5000
+checkpoint_path: ""
+evaluate: False
+load_step: 0
+save_replay: False
+local_results_path: "results"
+
+# --- RL hyperparameters ---
+gamma: 0.99
+batch_size: 32
+buffer_size: 32
+lr: 0.0005
+critic_lr: 0.0005
+optim_alpha: 0.99
+optim_eps: 0.00001
+grad_norm_clip: 10
+
+# --- Agent parameters ---
+agent: "rnn"
+rnn_hidden_dim: 64
+hidden_dim: 64
+obs_agent_id: True
+obs_last_action: True
+
+# --- SQUAB-SW with Conditional VQ-VAE parameters ---
+squab_window_size: 1000
+squab_beta: 1.0
+
+use_vqvae: True
+vqvae_codebook_size: 32
+vqvae_embedding_dim: 32
+vqvae_beta_commit: 0.25
+vqvae_decorr_weight: 0.01  # Prototype decorrelation loss weight
+
+vqvae_lr: 0.0003
+vqvae_train_freq: 5
+vqvae_sample_ratio: 0.5
+
+# --- Experiment running params ---
+repeat_id: 1
+label: "default_label"
